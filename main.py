@@ -3,7 +3,5 @@ from pathlib import Path
 
 src_path = Path(__file__).parent / "src"
 
-if not src_path.exists():
-    src_path.mkdir()
-
+src_path.mkdir(exist_ok=True)
 print(src_path)
