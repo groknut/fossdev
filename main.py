@@ -13,6 +13,7 @@ print(src_path)
 Сумма двух чисел
 """
 def sum(a: int, b: int) -> int:
+    if isinstance(a, str) or isinstance(b, str): raise ValueError("wrong type")
     return a + b
 
 """

@@ -9,6 +9,11 @@ def test_sum():
     res = 3
     assert sum(a, b) == res
 
+def test_sum_str():
+    a, b = "10", 5
+    res = 15
+    assert sum(a, b) == res
+
 """
 Tests for div() function
 """
