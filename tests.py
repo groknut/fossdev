@@ -5,7 +5,7 @@ from main import sum, div
 Tests for sum() function
 """
 def test_sum():
-    a, b = 1, 3
+    a, b = 1, 2
     res = 3
     assert sum(a, b) == res
 
@@ -17,6 +17,22 @@ def test_div():
     res = 5
     assert div(a, b) == res
 
+def test_div_str():
+    a, b = "1", 5
+    try:
+        div(a, b)
+    except:
+        print("Test failed: wrong type")
+
+def test_div_zero():
+    a, b = 5, 0
+    try:
+        div(a, b)
+    except:
+        print("Test failed: Zero")
+
 if __name__ == "__main__":
     test_sum()
     test_div()
+    test_div_str()
+    test_div_zero()
