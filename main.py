@@ -27,7 +27,7 @@ def div(a: int, b: int) -> int:
 """
 Вычитание
 """
-def sub(a, b) -> int:
+def sub(a, b):
     if isinstance(a, str) and isinstance(b, str):
         return a.replace(b, '')
     return a - b
