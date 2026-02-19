@@ -23,3 +23,8 @@ def div(a: int, b: int) -> int:
     if b == 0: raise ValueError("b == 0!")
     if isinstance(a, str) or isinstance(b, str): raise ValueError("wrong type")
     return a / b
+"""
+Вычитание двух чисел
+"""
+def subs(a: int, b: int) -> int:
+   return a - b

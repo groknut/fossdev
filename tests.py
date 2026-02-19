@@ -1,5 +1,5 @@
 
-from main import sum, div
+from main import sum, div, subs
 
 """
 Tests for sum() function
@@ -36,8 +36,15 @@ def test_div_zero():
     except:
         print("Test failed: Zero")
 
+def test_subs():
+    a = 5
+    b = 3
+    result = 2
+    assert subs(a, b) == result
+
 if __name__ == "__main__":
     test_sum()
     test_div()
     test_div_str()
     test_div_zero()
+    test_subs()
