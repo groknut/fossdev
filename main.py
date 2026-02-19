@@ -12,7 +12,7 @@ print(src_path)
 """
 Сумма двух чисел
 """
-def sum(a: int, b: int) -> int:
+def sum_a(a: int, b: int) -> int:
     if isinstance(a, str) or isinstance(b, str): raise ValueError("wrong type")
     return a + b
 
@@ -24,8 +24,9 @@ def div(a: int, b: int) -> int:
     if isinstance(a, str) or isinstance(b, str): raise ValueError("wrong type")
     return a / b
 
+
 """
-Вычитание
+Вычитание (лучший вариант)
 """
 def sub(a, b):
     if isinstance(a, str) and isinstance(b, str):
