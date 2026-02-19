@@ -1,5 +1,5 @@
 
-from main import sum, div
+from main import sum_a, div, substr
 
 """
 Tests for sum() function
@@ -7,12 +7,12 @@ Tests for sum() function
 def test_sum():
     a, b = 1, 2
     res = 3
-    assert sum(a, b) == res
+    assert sum_a(a, b) == res
 
 def test_sum_str():
     a, b = "10", 5
     res = 15
-    assert sum(a, b) == res
+    assert sum_a(a, b) == res
 
 """
 Tests for div() function
@@ -36,8 +36,17 @@ def test_div_zero():
     except:
         print("Test failed: Zero")
 
+def test_substruck():
+    a = 5
+    b = 3
+    result = 2
+    assert substr(a,b) == result
+    
+
+
 if __name__ == "__main__":
     test_sum()
     test_div()
     test_div_str()
     test_div_zero()
+    test_substruck()
