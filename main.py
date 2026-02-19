@@ -27,4 +27,8 @@ def div(a: int, b: int) -> int:
 Вычитание двух чисел
 """
 def subs(a: int, b: int) -> int:
-   return a - b
+    if isinstance(a, str) and isinstance(b, str):
+        result =  a.replace(b, '')
+    else:
+        result = a - b
+    return result
