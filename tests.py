@@ -42,8 +42,7 @@ def test_substruck():
     result = 2
     assert substr(a,b) == result
     
-
-
+    
 if __name__ == "__main__":
     test_sum()
     test_div()

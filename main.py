@@ -24,5 +24,11 @@ def div(a: int, b: int) -> int:
     if isinstance(a, str) or isinstance(b, str): raise ValueError("wrong type")
     return a / b
 
-def substr(a,b):
+
+"""
+Вычитание (лучший вариант)
+"""
+def sub(a, b):
+    if isinstance(a, str) and isinstance(b, str):
+        return a.replace(b, '')
     return a - b
