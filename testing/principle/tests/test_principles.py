@@ -2,15 +2,15 @@
 # sys.path.append("../src")
 #TODO make it with pip install math_demo
 
-# Ранее тестирование позволяет съэкономить время позднее
-# Тесты показывают наличие ошибок, а не их отствие
+# Ранее тестирование позволяет сэкономить время позднее
+# Тесты показывают наличие ошибок, а не их отсутствие
 # Тесты не должны использовать ВСЕ наборы входных параметров
 # Тесты не должны дублировать логику тестируемого кода
-# тесты должны покрывать "класстеры" входных параметров
+# тесты должны покрывать "кластеры" входных параметров
 # Тесты должны обнаруживать новые ошибки
 # тесты покрывают как успешные так и ошибочные кейсы
 
-from math_demo import add, add_with_bug
+from math_demo import add, add_with_bug, tax_calc_bugged. calc_tax_unbugged
 
 def test_addition():
     assert add(2,2)==4
@@ -44,9 +44,23 @@ def test_addition_clusters():
     assert add(9, 5) == 14
     print("Test ADDITION CLUSTERS PASSED")
 
+def test_tax_calc():
+    assert tax_calc_bugged(100) == 15
+    assert tax_calc_bugged(10) == 1.5
+    assert tax_calc_bugged(1) == 0.15
+    print("Test TAX_CALC PASSED")
+
+def test_tax_calc_un():
+    assert calc_tax_unbugged(100) == 15
+    assert calc_tax_unbugged(10) == 1.5
+    assert calc_tax_unbugged(1) == 0.15
+    print("Test TAX_CALC_UNBUGGED PASSED")
+
+
 if __name__ == "__main__":
     test_addition()
     test_addition_with_bug()
     test_addition_duplicate()
     # test_addition_overkill()
     test_addition_clusters()
+    test_tax_calc()
