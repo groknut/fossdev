@@ -36,8 +36,17 @@ def test_addition_overkill():
             assert add(-i, -j) == -i-j
             assert add(i, -j) == i -j
 
+def test_addition_clusters():
+    assert add(7, 6) == 13
+    assert add(10, -11) == -1
+    assert add(6, -2) == 4
+    assert add(5, 9) == 14
+    assert add(9, 5) == 14
+    print("Test ADDITION CLUSTERS PASSED")
+
 if __name__ == "__main__":
     test_addition()
     test_addition_with_bug()
     test_addition_duplicate()
-    test_addition_overkill()
+    # test_addition_overkill()
+    test_addition_clusters()
