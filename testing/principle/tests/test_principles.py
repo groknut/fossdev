@@ -10,7 +10,7 @@
 # Тесты должны обнаруживать новые ошибки
 # тесты покрывают как успешные так и ошибочные кейсы
 
-from math_demo import add, add_with_bug, tax_calc_bugged. calc_tax_unbugged
+from math_demo import add, add_with_bug, tax_calc_bugged, calc_tax_unbugged
 
 def test_addition():
     assert add(2,2)==4
@@ -56,6 +56,12 @@ def test_tax_calc_un():
     assert calc_tax_unbugged(1) == 0.15
     print("Test TAX_CALC_UNBUGGED PASSED")
 
+def tax_negative_income():
+    try:
+        calc_tax_unbugged(-1)
+        print("Test TAX_CALC_UNBUGGED UNPASSED")
+    except:
+        print("Test TAX_CALC_UNBUGGED PASSED")
 
 if __name__ == "__main__":
     test_addition()
@@ -64,3 +70,4 @@ if __name__ == "__main__":
     # test_addition_overkill()
     test_addition_clusters()
     test_tax_calc()
+    tax_negative_income()
