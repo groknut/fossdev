@@ -1,3 +1,6 @@
 document.txt
 __pycache__/
 src/
+testing/principle/src/math_demo.egg-info
+testing/principle/src/__pycache__/
+
