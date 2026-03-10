@@ -1,2 +1,2 @@
-def calc_ndfl(num):
-    return num
+def calc_ndfl(income):
+    return income * 0.13
