@@ -1,0 +1,29 @@
+from ndfl import calc_ndfl
+
+
+def test_ndfl_tier_1_basic():
+    assert calc_ndfl(2_000_000) == 200_200
+
+
+def test_ndfl_tier_2_basic():
+    assert calc_ndfl(4_000_000) == 552_000
+
+
+def test_ndfl_tier_3_basic():
+    assert calc_ndfl(10_000_000) == 1_002_000
+
+
+def test_ndfl_tier_4_basic():
+    assert calc_ndfl(30_000_000) == 5_402_000
+
+
+def test_ndfl_tier_5_basic():
+    assert calc_ndfl(60_000_000) == 11_602_000
+
+
+if __name__ == "__main__":
+    test_ndfl_tier_1_basic()
+    test_ndfl_tier_2_basic()
+    test_ndfl_tier_3_basic()
+    test_ndfl_tier_4_basic()
+    test_ndfl_tier_5_basic()
