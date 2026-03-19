@@ -10,14 +10,16 @@ help:
 create_practice:
 	@echo "Create practice"
 
-	ifndef PRACTICE
+ifndef PRACTICE
 		$(error Переменная PRACTICE не задана)
-	endif
+endif
 		mkdir -p $(PRACTICE)
+		cd $(PRACTICE)
+		cp PracticeMakefile $(PRACTICE)/Makefile
 
-	# mkdir demo-practice/src
-	# mkdir demo-practice/tests
-	# touch demo-practice/README.md
+# mkdir demo-practice/src
+# mkdir demo-practice/tests
+# touch demo-practice/README.md
 
 remove_practice:
 	@echo "Remove practice"
