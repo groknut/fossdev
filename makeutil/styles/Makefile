@@ -1,7 +1,10 @@
 
 
-RUFF := ruff
-SRC_DIR := src
+VENV = .venv
+PYTHON = $(VENV)/bin/python
+PIP = $(VENV)/bin/pip
+RUFF = $(VENV)/bin/ruff
+SRC_DIR = src
 
 .PHONY: format
 format:
