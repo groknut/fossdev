@@ -6,16 +6,31 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "sales"
-copyright = "2026, Max"
-author = "Max"
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+
+
+project = "Sales"
+copyright = "2026, Artem Vesnin"
+author = "Artem Vesnin"
 release = "0.0.1"
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser"]
+extensions = [
+    "myst_parser",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.viewcode",
+]
 
 source_suffix = {".rst": "restructuredtext", ".md": "markdown"}
+
+autosummary_generate = True
 
 templates_path = ["_templates"]
 exclude_patterns = []
