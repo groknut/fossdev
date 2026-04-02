@@ -4,18 +4,13 @@ PYTHON = $(VENV)/bin/python
 PIP = $(VENV)/bin/pip
 MYPY = $(VENV)/bin/mypy
 
-
-run: venv ins-mypy
-
-venv:
-	@echo "Creating virtual environment..."
+$(VENV)/.done:
 	python3 -m venv $(VENV)
-
-ins-mypy: venv 
 	@echo "Starting download mypy"
 	$(PIP) install mypy
-	$(PIP) --version
-	$(PIP) list
+	touch $(VENV)/.done
+	
+install: $(VENV)/.done
 
-type-check:
-	@$(MYPY) ./src/calc.py
+type-check: install
+	$(MYPY) src
