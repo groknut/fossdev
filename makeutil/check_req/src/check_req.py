@@ -13,7 +13,7 @@ def _check(file_req, file_lib):
             l = l.strip().split(" ")
             imp_idx = l.index("import")
             if not req_map.get(l[imp_idx+1],False):
-                print("Error. File don't have library")
+                print("Error. Txt file don't have library")
             lib_vec.append(l[imp_idx+1])
 
 if __name__ == "__main__":
