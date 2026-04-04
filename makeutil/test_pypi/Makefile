@@ -15,9 +15,9 @@ build: $(VENV)/.done
 	$(PYTHON) -m build
 
 publish: build
-	$(PYTHON) -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+	$(PYTHON) -m twine upload --config-file ./.pypirc  --verbose  --repository testpypi dist/*
 
 clean:
-	rm -rf build/ dist/*.egg-info .venv src/__pycache__ tests/__pycache__
+	rm -rf build/ dist/ .venv src/__pycache__ tests/__pycache__ src/*.egg-info
 
 .PHONY: test build clean publish
