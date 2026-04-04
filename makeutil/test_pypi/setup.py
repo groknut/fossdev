@@ -5,5 +5,5 @@ setup(
     version="0.0.1",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    url="https://github.com/groknut/fossdev",
+    url="https://github.com/groknut/fossdev/tree/homework/test_pypi_release",
 )
