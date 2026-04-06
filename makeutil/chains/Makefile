@@ -7,6 +7,18 @@ RUFF = $(VENV)/bin/ruff
 SRC_DIR = src
 UTILS_DIR = utils
 
+help:
+	@echo "Доступные команды:"
+	@echo "  check-requirements   проверка зависимостей"
+	@echo "  type-check           статическая проверка типов"
+	@echo "  format               автоформатирование кода"
+	@echo "  lint                 проверка стиля и форматирования"
+	@echo "  check                все проверки (рекомендуется перед коммитом)"
+	@echo "  clean                удаление виртуального окружения"
+
+
+.DEFAULT_GOAL := help
+
 $(VENV)/.done:
 	python3 -m venv $(VENV)
 	@echo "Creating virtual environment..."
