@@ -1,13 +1,15 @@
 [project]
-name = "order service"
+name = "order-service"
 version = "0.1.0"
-description = "service for docker practice"
+description = ""
 authors = [
     {name = "groknut",email = "184639205+groknut@users.noreply.github.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "uvicorn[standart] (>=0.46.0,<0.47.0)",
+    "httpx (>=0.28.1,<0.29.0)"
 ]
 
 
