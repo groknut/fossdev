@@ -1,0 +1,22 @@
+
+# 7. Прописать команду запуска в Makefile,
+# сделать определения переменной окружения так чтобы oreder service могу найти product даже если он запущен не на 8001 порте
+
+.DEFAULT_GOAL := help
+
+help:
+	@echo "This makefile for services up"
+
+PORT ?= 8001
+HOST ?= 127.0.0.1
+
+PRODUCT_SERVICE_URL ?= http://${HOST}:${PORT}
+
+run-product:
+	cd product_service && poetry run uvicorn src.app.main:app --host $(HOST) --port $(PORT)
+
+run-order:
+	cd order_service && export PRODUCT_SERVICE_URL && poetry run uvicorn src.app.main:app --host $(HOST) --port 8002
+
+run:
+	make -j2 run-order run-product
