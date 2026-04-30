@@ -7,16 +7,17 @@
 help:
 	@echo "This makefile for services up"
 
-PORT ?= 8001
+PRODUCT_PORT ?= 8001
+ORDER_PORT ?= 8002
 HOST ?= 127.0.0.1
 
-PRODUCT_SERVICE_URL ?= http://${HOST}:${PORT}
+PRODUCT_SERVICE_URL ?= http://${HOST}:${PRODUCT_PORT}
 
 run-product:
-	cd product_service && poetry run uvicorn src.app.main:app --host $(HOST) --port $(PORT)
+	cd product_service && poetry run uvicorn src.app.main:app --host $(HOST) --port $(PRODUCT_PORT)
 
 run-order:
-	cd order_service && export PRODUCT_SERVICE_URL && poetry run uvicorn src.app.main:app --host $(HOST) --port 8002
+	cd order_service && export PRODUCT_SERVICE_URL && poetry run uvicorn src.app.main:app --host $(HOST) --port $(ORDER_PORT)
 
 run:
 	make -j2 run-order run-product
