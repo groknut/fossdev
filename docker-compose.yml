@@ -1,4 +1,4 @@
-service:
+services:
     product-service:
         build: ./product_service
         ports:
@@ -18,9 +18,16 @@ service:
         depends_on:
             - product-service
 
+    discount-service:
+        build: ./discount-service
+        ports:
+            - "8003:8000"
+        networks:
+            - service-net
+
 networks:
     service-net:
         driver: bridge
         ipam:
             config:
-                subnet: 127.28.10.0/24
+                subnet: 10.28.10.0/24
